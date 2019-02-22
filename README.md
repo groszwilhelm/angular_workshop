@@ -1,12 +1,10 @@
-### Step1
+### Step2
 
- - Create a product property on the AppComponent and assign it the product
- - Create a product interface
- - Show the product title in the html
- - Show the product description in the html
- - Show the number of likes of a product
- - Show the number of comments of a product
- - Add src to the image tag
+ - Create a product component
+  - Move the logic from the AppComponent to the newly created ProductComponent
+  - Pass in the product from the AppComponent to the ProcuctComponent using @Input
+  - Create an @Output from the ProductComponent that is triggered when the button is clicked
+  - Create a ProductListComponent and move the interaction with the ProductComponent into it
 
 ### Run the project
  - npm i
