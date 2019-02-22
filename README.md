@@ -1,6 +1,8 @@
-### Step5
+### Step6
 
-  - Create a CurrencyPipe that adds a currency after the price of the product
+  - Create a ListService
+  - Move the product list into the service
+  - Fetch the product list from the ListService
 
 ### Run the project
  - npm i

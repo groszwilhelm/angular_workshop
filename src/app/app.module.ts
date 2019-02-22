@@ -6,6 +6,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ZoomImageDirective } from './zoom.directive';
 import { TagFilterComponent } from './tag-filter/tag-filter.component';
+import { CurrencyFormatterPipe } from './currency.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { TagFilterComponent } from './tag-filter/tag-filter.component';
     ProductComponent,
     ProductListComponent,
     ZoomImageDirective,
-    TagFilterComponent
+    TagFilterComponent,
+    CurrencyFormatterPipe
   ],
   imports: [
     BrowserModule
