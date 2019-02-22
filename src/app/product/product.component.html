@@ -2,10 +2,10 @@
   <img class="card-img-top" [src]="product.imageSrc">
   <div class="card-body">
     <h5>
-      {{ product.title }}
+      <ng-content select="[content-type=title]"></ng-content>
     </h5>
     <p class="card-text">
-      {{ product.description }}
+      <ng-content select="[content-type=description]"></ng-content>
     </p>
     <div class="d-flex justify-content-between align-items-center">
       <small class="text-muted">

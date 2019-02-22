@@ -1,4 +1,4 @@
-### Step3
+### Step4
 
   - Pass in the product title to the ProductComponent using content projection
   - Pass in the product description to the ProductComponent using content projection
