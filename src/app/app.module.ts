@@ -7,6 +7,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ZoomImageDirective } from './zoom.directive';
 import { TagFilterComponent } from './tag-filter/tag-filter.component';
 import { CurrencyFormatterPipe } from './currency.pipe';
+import { ProductService } from './core/services/product.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { CurrencyFormatterPipe } from './currency.pipe';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
