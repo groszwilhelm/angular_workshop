@@ -7,18 +7,22 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { ProductComponent } from './product-list/product/product.component';
 import { TagFilterComponent } from './product-list/tag-filter/tag-filter.component';
+import { ProductDetailsComponent } from './product-list/details/details.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     ProductListComponent,
-    TagFilterComponent
+    TagFilterComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
     SharedModule,
-    CoreModule
+    CoreModule,
+    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })

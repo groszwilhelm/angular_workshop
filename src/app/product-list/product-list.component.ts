@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { Product } from './product/product.model';
 import { ProductService } from '../core/services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'wsh-product-list',
@@ -11,7 +12,7 @@ export class ProductListComponent {
   public products: Array<Product> = [];
   public selectedTag = '';
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private router: Router) {
     this.products = productService.getProducts();
   }
 
@@ -20,6 +21,6 @@ export class ProductListComponent {
   }
 
   public productClickHandler(prod: Product) {
-    console.log(prod);
+    this.router.navigate(['product-list', prod.id]);
   }
 }
