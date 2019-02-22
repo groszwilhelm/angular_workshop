@@ -1,0 +1,12 @@
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a (click)="onSelectTag('')" class="nav-link" [class.active]="'' === selectedTag">
+      All
+    </a>
+  </li>
+  <li class="nav-item" *ngFor="let tag of tags">
+    <a (click)="onSelectTag(tag)" class="nav-link" [class.active]="tag === selectedTag">
+      {{tag}}
+    </a>
+  </li>
+</ul>

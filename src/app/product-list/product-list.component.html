@@ -1,8 +1,16 @@
 <div class="row">
-  <div class="col-md-4">
-    <wsh-product [product]="product" (clicked$)="productClickHandler($event)">
-      <span content-type="title"> {{ product.title }} </span>
-      <span content-type="description"> {{ product.description }} </span>
-    </wsh-product>
+  <div class="col">
+    <wsh-tag-filter [products]="products" (tagSelected)="filterTagChangedHandler($event)"></wsh-tag-filter>
   </div>
+</div>
+
+<div class="row">
+  <ng-container *ngFor="let product of products; let i = index;">
+    <div class="col-md-4" *ngIf="selectedTag === product.category || selectedTag === ''">
+      <wsh-product [product]="product" (clicked$)="productClickHandler($event)">
+        <span content-type="title"> {{ i + 1 }}. {{ product.title }} </span>
+        <span content-type="description"> {{ product.description }} </span>
+      </wsh-product>
+    </div>
+  </ng-container>
 </div>
