@@ -122,11 +122,11 @@
   "defaultProject": "workshop",
   "schematics": {
     "@schematics/angular:component": {
-      "prefix": "app",
+      "prefix": "wsh",
       "styleext": "css"
     },
     "@schematics/angular:directive": {
-      "prefix": "app"
+      "prefix": "wsh"
     }
   }
 }

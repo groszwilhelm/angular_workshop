@@ -1,10 +1,7 @@
-### Step2
+### Step3
 
- - Create a product component
-  - Move the logic from the AppComponent to the newly created ProductComponent
-  - Pass in the product from the AppComponent to the ProcuctComponent using @Input
-  - Create an @Output from the ProductComponent that is triggered when the button is clicked
-  - Create a ProductListComponent and move the interaction with the ProductComponent into it
+  - Pass in the product title to the ProductComponent using content projection
+  - Pass in the product description to the ProductComponent using content projection
 
 ### Run the project
  - npm i
