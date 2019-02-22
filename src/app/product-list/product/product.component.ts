@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { Product } from '../product.model';
+import { Product } from './product.model';
 
 @Component({
   selector: 'wsh-product',

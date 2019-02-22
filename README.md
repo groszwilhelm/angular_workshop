@@ -1,9 +1,9 @@
-### Step7
+### Step8
 
-  - Move the directives, pipes into a SharedModule that will be imported in the AppModule
-  - Create a CoreModule and provide the ProductService there, import CoreModule inside the AppModule
-  - Move the ProductComponent and TagFilterComponent into the product-list directory
-  - Move the product.model into the product directory
+  - Create an AppRoutingModule
+  - Add two routes: product-list, product-list/productId (product list, product details)
+  - Add routerLink to the "home" button inside the navigation - it should route to the product list
+  - Add routerLink to the "more details" button inside the product, it should route to a product detail page
 
 ### Run the project
  - npm i
