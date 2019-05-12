@@ -29,7 +29,7 @@ export const products = [{
   commentsNo: 12,
   category: 'winter'
 }, {
-  id: 1420,
+  id: 1430,
   title: 'Product title',
   price: 330.5,
   imageSrc: 'https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=350',
@@ -39,7 +39,7 @@ export const products = [{
   commentsNo: 12,
   category: 'outdoor'
 }, {
-  id: 1420,
+  id: 1440,
   title: 'Some title',
   price: 330.5,
   imageSrc: 'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=350',
@@ -49,7 +49,7 @@ export const products = [{
   commentsNo: 12,
   category: 'outdoor'
 }, {
-  id: 1420,
+  id: 1450,
   title: 'Another title',
   price: 330.5,
   imageSrc: 'https://images.pexels.com/photos/1782561/pexels-photo-1782561.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
@@ -59,7 +59,7 @@ export const products = [{
   commentsNo: 12,
   category: 'food'
 }, {
-  id: 1420,
+  id: 1460,
   title: 'Yet another title',
   price: 330.5,
   imageSrc: 'https://images.pexels.com/photos/1448730/pexels-photo-1448730.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500',
@@ -69,7 +69,7 @@ export const products = [{
   commentsNo: 12,
   category: 'food'
 }, {
-  id: 1420,
+  id: 1470,
   title: 'Product title',
   price: 330.5,
   imageSrc: 'https://images.pexels.com/photos/734214/pexels-photo-734214.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
