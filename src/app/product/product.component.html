@@ -1,0 +1,34 @@
+<div class="card mb-4 box-shadow">
+  <!-- Add prodcuts src for the image -->
+  <img 
+    appZoom 
+    class="card-img-top" 
+    [src]="product?.imageSrc">
+  <div class="card-body">
+    <h5>
+      <!-- Add product title -->
+      <!-- {{ product?.title }} -->
+      <ng-content select="[title]"></ng-content>
+    </h5>
+    <p class="card-text">
+      <!-- Add product description -->
+      <!-- {{ product?.description }} -->
+      <ng-content select="[description]"></ng-content>
+    </p>
+    <p class="card-text">
+      {{ product?.price | currencyFormatter: 'EUR' }}
+    </p>
+    <div class="d-flex justify-content-between align-items-center">
+      <small class="text-muted">
+        {{ product?.likesNo }} likes
+      </small>
+      <small class="text-muted">
+        <!-- Add number of comments from a product -->
+        {{ product?.commentsNo }} comments
+      </small>
+      <button 
+        class="btn btn-primary"
+        (click)="createEvent()">More details</button>
+    </div>
+  </div>
+</div>

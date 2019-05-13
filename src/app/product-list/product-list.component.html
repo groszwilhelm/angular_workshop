@@ -1,0 +1,11 @@
+<div class="row">
+  <!-- product -->
+  <ng-container *ngFor="let product of products">
+    <app-product
+      [product]="product" 
+      (click$)="handleClickEvent($event)">
+      <ng-container title>{{ product?.title }}</ng-container>
+      <ng-container description>{{ product?.description }}</ng-container>
+    </app-product>
+  </ng-container>
+</div>
