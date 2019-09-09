@@ -90,3 +90,9 @@ body {
     margin-top: 7rem;
   }
 }
+
+.zoom-in {
+  transform: scale(1.2);
+  transition: transform 1s;
+  z-index: 1000;
+}

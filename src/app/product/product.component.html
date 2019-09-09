@@ -1,22 +1,16 @@
-<div class="col-md-4">
-  <div class="card mb-4 box-shadow">
-    <img class="card-img-top" [src]="product?.imageSrc">
-    <div class="card-body">
-      <h5>
-        {{ product?.title }}
-      </h5>
-      <p class="card-text">
-        {{ product?.description || '-' }}
-      </p>
-      <div class="d-flex justify-content-between align-items-center">
-        <small class="text-muted">
-          {{ product?.likesNo || '-' }} likes
-        </small>
-        <small class="text-muted">
-          {{ product?.commentsNo }} comments
-        </small>
-        <button class="btn btn-primary" (click)="buttonClickHandler()">More details</button>
-      </div>
+<div class="card mb-4 box-shadow">
+  <img appZoom class="card-img-top" [src]="product?.imageSrc">
+  <div class="card-body">
+    <ng-content select="[content=title]"></ng-content>
+    <ng-content select="[content=description]"></ng-content>
+    <div class="d-flex justify-content-between align-items-center">
+      <small class="text-muted">
+        {{ product?.likesNo || '-' }} likes
+      </small>
+      <small class="text-muted">
+        {{ product?.commentsNo }} comments
+      </small>
+      <button class="btn btn-primary" (click)="buttonClickHandler()">More details</button>
     </div>
   </div>
 </div>
