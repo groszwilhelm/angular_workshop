@@ -6,7 +6,7 @@ import { Product } from './product.model';
 @Injectable({
   providedIn: 'root'
 })
-export class MockedProductsService implements ProductsService {
+export class MockedProductsService {
   getProducts(): Array<Product> {
     return products;
   }

@@ -3,30 +3,21 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ProductComponent } from './product/product.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ZoomDirective } from './zoom.directive';
-import { CurrencyFormatterPipe } from './currency-formatter.pipe';
-import { ProductsService } from './products.service';
-import { MockedProductsService } from './mocked-products.service';
+import { ProductsService } from './products/products.service';
+import { MockedProductsService } from './products/mocked-products.service';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ProductComponent,
-    ProductListComponent,
-    ZoomDirective,
-    CurrencyFormatterPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ProductsModule
   ],
   providers: [
     { provide: ProductsService, useClass: MockedProductsService }
-  ],
-  entryComponents: [
-    ProductComponent
   ],
   bootstrap: [AppComponent]
 })
