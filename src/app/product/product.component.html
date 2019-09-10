@@ -1,5 +1,5 @@
 <div class="card mb-4 box-shadow">
-  <img appZoom class="card-img-top" [src]="product?.imageSrc">
+  <img class="card-img-top" [src]="product?.imageSrc">
   <div class="card-body">
     <ng-content select="[content=title]"></ng-content>
     <ng-content select="[content=description]"></ng-content>
@@ -9,6 +9,9 @@
       </small>
       <small class="text-muted">
         {{ product?.commentsNo }} comments
+      </small>
+      <small class="text-muted">
+        {{ product?.price | currencyFormatter: 'EUR' }} 
       </small>
       <button class="btn btn-primary" (click)="buttonClickHandler()">More details</button>
     </div>

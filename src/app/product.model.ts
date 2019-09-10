@@ -7,4 +7,5 @@ export interface Product {
   likesNo: number;
   liked: boolean;
   commentsNo: number;
+  category: string;
 }
