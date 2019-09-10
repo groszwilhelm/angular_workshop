@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { ProductService } from './services/product.service';
+import { ProductApiService } from './services/product.service';
 
 @NgModule({
   providers: [
-    ProductService
+    ProductApiService
   ],
 })
 export class CoreModule { }

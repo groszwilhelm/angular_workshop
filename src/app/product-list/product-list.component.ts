@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Product } from './product/product.model';
-import { ProductService } from '../core/services/product.service';
+import { ProductApiService } from '../core/services/product.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class ProductListComponent {
   public products: Array<Product> = [];
   public selectedTag = '';
 
-  constructor(private productService: ProductService, private router: Router) {
+  constructor(private productService: ProductApiService, private router: Router) {
     this.products = productService.getProducts();
   }
 
