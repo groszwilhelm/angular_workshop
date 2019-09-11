@@ -1,0 +1,26 @@
+<div class="card" *ngIf="product">
+  <div class="card-header">Details for: {{ product.title }} / All products: {{productsNo}}</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-3">Title</div>
+      <div class="col-9">{{ product.title }}</div>
+    </div>
+    <div class="row">
+      <div class="col-3">Description</div>
+      <div class="col-9">{{ product.description }}</div>
+    </div>
+    <div class="row">
+      <div class="col-3">Price</div>
+      <div class="col-9">{{ product.price | currencyFormatter:"USD" }}</div>
+    </div>
+    <div class="row">
+        <div class="col-3">Category</div>
+        <div class="col-9">{{ product.categoryId }}</div>
+      </div>
+    <div class="row">
+      <div class="col p-4">
+        <img [src]="product.imageSrc" class="img-thumbnail">
+      </div>
+    </div>
+  </div>
+</div>

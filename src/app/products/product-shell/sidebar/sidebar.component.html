@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Products</h5>
+    <div class="list-group">
+      <a *ngFor="let product of (products$ | async)" [routerLink]="[product.id]" routerLinkActive="router-link-active"  class="list-group-item list-group-item-action">
+        {{product.title}} ({{product.category}})
+      </a>
+    </div>
+  </div>
+</div>

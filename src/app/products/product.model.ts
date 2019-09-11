@@ -8,4 +8,5 @@ export interface Product {
   liked: boolean;
   commentsNo: number;
   category: string;
+  categoryId: number;
 }

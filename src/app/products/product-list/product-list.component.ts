@@ -11,7 +11,7 @@ export class ProductListComponent {
   public products: Array<Product>;
 
   constructor(private productsService: ProductsService, private ngz: NgZone, private cd: ChangeDetectorRef) {
-    this.products = productsService.getProducts();
+    // this.products = productsService.getProducts();
   }
 
   ngOnInit() {
