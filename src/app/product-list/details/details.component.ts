@@ -14,7 +14,7 @@ export class ProductDetailsComponent {
   public product = null;
 
   constructor(private route: ActivatedRoute, private productService: ProductApiService) {
-    this.product = this.productService.getProducts()
-      .filter(product => product.id === Number(this.route.snapshot.params.id))[0];
+    // this.product = this.productService.getProducts()
+    //   .filter(product => product.id === Number(this.route.snapshot.params.id))[0];
   }
 }

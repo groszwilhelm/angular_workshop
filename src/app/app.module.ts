@@ -10,6 +10,10 @@ import { ProductComponent } from './product-list/product/product.component';
 import { TagFilterComponent } from './product-list/tag-filter/tag-filter.component';
 import { ProductDetailsComponent } from './product-list/details/details.component';
 import { AppRoutingModule } from './app-routing.module';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './product-list/reducers/product.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { ProductEffect } from './product-list/effects/product.effects';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,9 @@ import { AppRoutingModule } from './app-routing.module';
     SharedModule,
     CoreModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({ productState: reducer }),
+    EffectsModule.forRoot([ProductEffect])
   ],
   bootstrap: [AppComponent]
 })
