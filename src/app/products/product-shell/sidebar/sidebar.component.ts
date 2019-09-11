@@ -7,7 +7,7 @@ import { Product } from '../../product.model';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent {
 
   products$ = this.productsService.productsWithCategories$;
 

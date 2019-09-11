@@ -1,4 +1,4 @@
-<div class="card" *ngIf="product">
+<div class="card" *ngIf="product$ | async as product">
   <div class="card-header">Details for: {{ product.title }} / All products: {{productsNo}}</div>
   <div class="card-body">
     <div class="row">

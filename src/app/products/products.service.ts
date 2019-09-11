@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Product } from "./product.model";
 import { HttpClient } from "@angular/common/http";
-import { Observable, combineLatest } from "rxjs";
-import { tap, shareReplay, map } from "rxjs/operators";
+import { Observable, combineLatest, Subject } from "rxjs";
+import { tap, shareReplay, map, distinctUntilChanged } from "rxjs/operators";
 import { Category, CategoriesService } from "../categories.service";
 
 @Injectable({
@@ -33,6 +33,17 @@ export class ProductsService {
     tap(data => console.log('pwc: ', data))
   );
 
+  private selectedProductId$ = new Subject();
+
+  public selectedProduct$: Observable<Product> = combineLatest(
+    this.productsWithCategories$,
+    this.selectedProductId$
+  )
+  .pipe(
+    map(([ products, productId ]) => products.find(({ id }) => id === productId)),
+    distinctUntilChanged()
+  );
+
   constructor(
     private http: HttpClient,
     private categoriesService: CategoriesService
@@ -44,5 +55,9 @@ export class ProductsService {
 
   getProduct(id: string): Observable<Product> {
     return this.http.get<Product>(`${this.productsURL}/${id}`);
+  }
+
+  public setSelectedProductId(productId): void {
+    this.selectedProductId$.next(productId);
   }
 }
