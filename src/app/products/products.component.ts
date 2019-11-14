@@ -1,32 +1,19 @@
 import { Component, OnInit } from "@angular/core";
 import { Subscription, interval, timer, fromEvent, Observable } from "rxjs";
 import { debounce, take, pluck, map, debounceTime, filter } from 'rxjs/operators';
+import { ProductApiService } from '../core/services/product.service';
+import { Product } from '../product-list/product/product.model';
 
 @Component({
   selector: "wsh-products",
   templateUrl: "./products.component.html",
   styleUrls: ["./products.component.css"]
 })
-export class ProductsComponent implements OnInit {
-  mySubscription: Subscription;
+export class ProductsComponent {
 
-  textStream$: Observable<string>;
+  products: Product[] = [];
 
-  ngOnInit() {
-
-    const badWords = ['bad', 'foo', 'bar'];
-
-    const input = document.querySelector('input')
-    const event$ = fromEvent(input, 'keyup');
-
-    this.textStream$ = event$.pipe(
-      debounceTime(500),
-      map((evt: any) => evt.target.value),
-      map(val => {
-        const chunks = val.split(' ');
-        return chunks.filter(word => !badWords.includes(word)).join(' ');
-      })
-    )
-    
+  constructor(private productsService: ProductApiService) {
+    this.productsService.getProducts().subscribe(data => this.products = data)
   }
 }

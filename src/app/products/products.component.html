@@ -1,9 +1,21 @@
-<div class="row"*ngIf="false">
-    <div class="col-3">sidebar</div>
-    <div class="col-9">detail</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-3">
+      <div class="card">
+            <div class="p-2">
+                    <input type="search" class="form-control" />
+                  </div>
+                  <div class="list-group">
+                    <a *ngFor="let p of products" class="list-group-item list-group-item-action">
+                      {{p.title}}
+                    </a>
+                  </div>
+      </div>
+    
+  </div>
+  <div class="col-9">detail</div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-12 text-center">
         <label for="">Search</label>
         <input type="text" class="form-control">
@@ -11,4 +23,4 @@
     <div class="col-4"></div>
     <div class="col-4">{{ textStream$ | async }}</div>
     <div class="col-4"></div>
-</div>
+</div> -->
