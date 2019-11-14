@@ -13,4 +13,8 @@ export class ProductApiService {
   getProducts(): Observable<Array<Product>> {
     return this.http.get<Array<Product>>(this.api);
   }
+
+  get404Products(): Observable<any> {
+    return this.http.get<Array<Product>>('/api/unexisting');
+  }
 }

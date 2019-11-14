@@ -77,5 +77,34 @@
       "commentsNo": "12",
       "category": "food"
     }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "Cat 1"
+    },
+    {
+      "id": 2,
+      "title": "Cat 2"
+    },
+    {
+      "id": 3,
+      "title": "Cat 3"
+    }
+  ],
+
+  "suppliers": [
+      {
+        "id": 1,
+        "title": "Supp 1"
+      },
+      {
+        "id": 2,
+        "title": "Supp 2"
+      },
+      {
+        "id": 3,
+        "title": "Supp 3"
+      }
   ]
 }
