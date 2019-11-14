@@ -9,6 +9,7 @@ import { ProductComponent } from './product-list/product/product.component';
 import { TagFilterComponent } from './product-list/tag-filter/tag-filter.component';
 import { ProductDetailsComponent } from './product-list/details/details.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
     ProductComponent,
     ProductListComponent,
     TagFilterComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
