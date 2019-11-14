@@ -4,8 +4,11 @@
 </div>
 
 <div class="row">
-    <div class="col text-center">
+    <div class="col-12 text-center">
         <label for="">Search</label>
         <input type="text" class="form-control">
     </div>
+    <div class="col-4"></div>
+    <div class="col-4">{{ textStream$ | async }}</div>
+    <div class="col-4"></div>
 </div>
