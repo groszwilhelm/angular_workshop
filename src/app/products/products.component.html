@@ -1,18 +1,12 @@
 <div class="row">
   <div class="col-xs-12 col-sm-3">
-      <div class="card">
-            <div class="p-2">
-                    <input type="search" class="form-control" />
-                  </div>
-                  <div class="list-group">
-                    <a *ngFor="let p of products" class="list-group-item list-group-item-action">
-                      {{p.title}}
-                    </a>
-                  </div>
-      </div>
-    
+    <wsh-products-sidebar [products]="products"></wsh-products-sidebar>
   </div>
-  <div class="col-9">detail</div>
+  <div class="col-9">
+      <label for="">Product Details</label>
+      <br>
+      {{ (selectedProductService.selectedProduct$ | async)?.title }}
+  </div>
 </div>
 
 <!-- <div class="row">

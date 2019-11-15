@@ -10,6 +10,7 @@ import { TagFilterComponent } from './product-list/tag-filter/tag-filter.compone
 import { ProductDetailsComponent } from './product-list/details/details.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductsComponent } from './products/products.component';
+import { ProductsSidebarComponent } from "./products/sidebar/products-sidebar.component";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductsComponent } from './products/products.component';
     ProductListComponent,
     TagFilterComponent,
     ProductDetailsComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductsSidebarComponent
   ],
   imports: [
     BrowserModule,

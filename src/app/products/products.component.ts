@@ -1,8 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { Subscription, interval, timer, fromEvent, Observable } from "rxjs";
-import { debounce, take, pluck, map, debounceTime, filter } from 'rxjs/operators';
 import { ProductApiService } from '../core/services/product.service';
 import { Product } from '../product-list/product/product.model';
+import { SelectedProductService } from '../core/services/selected-product.service';
 
 @Component({
   selector: "wsh-products",
@@ -12,8 +11,10 @@ import { Product } from '../product-list/product/product.model';
 export class ProductsComponent {
 
   products: Product[] = [];
+  selectedProduct: Product;
 
-  constructor(private productsService: ProductApiService) {
+  constructor(private productsService: ProductApiService,
+    public selectedProductService: SelectedProductService) {
     this.productsService.getProducts().subscribe(data => this.products = data)
   }
 }
