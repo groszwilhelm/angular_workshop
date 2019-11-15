@@ -12,7 +12,7 @@ export class ProductListComponent {
   public products: Array<Product> = [];
   public selectedTag = '';
 
-  constructor(private productService: ProductApiService, private router: Router) {
+  constructor(public productService: ProductApiService, private router: Router) {
   }
 
   public filterTagChangedHandler(tag) {
