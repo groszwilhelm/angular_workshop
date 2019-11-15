@@ -1,10 +1,5 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Product } from "./../../product-list/product/product.model";
-import {
-  EventBusService,
-  MyEvent
-} from "./../../core/services/event-bus.service";
-import { SelectedProductService } from './../../core/services/selected-product.service';
 
 @Component({
   selector: "wsh-products-sidebar",
@@ -15,7 +10,7 @@ import { SelectedProductService } from './../../core/services/selected-product.s
       </div>
       <div class="list-group">
         <a
-          (click)="selectedProductService.changeSelectedProduct(p)"
+          (click)="changeSelectedProduct(p)"
           *ngFor="let p of products"
           class="list-group-item list-group-item-action"
         >
@@ -30,5 +25,10 @@ export class ProductsSidebarComponent {
   @Input()
   products: Product[];
 
-  constructor(public selectedProductService: SelectedProductService) {}
+  @Output()
+  productSelected: EventEmitter<Product> = new EventEmitter();
+
+  changeSelectedProduct(p: Product) {
+    this.productSelected.emit(p);
+  }
 }

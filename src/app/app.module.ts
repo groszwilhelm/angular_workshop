@@ -7,10 +7,10 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { CoreModule } from './core/core.module';
 import { ProductComponent } from './product-list/product/product.component';
 import { TagFilterComponent } from './product-list/tag-filter/tag-filter.component';
-import { ProductDetailsComponent } from './product-list/details/details.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductsComponent } from './products/products.component';
 import { ProductsSidebarComponent } from "./products/sidebar/products-sidebar.component";
+import { ProductDetailsComponent } from "./products/detail/product-details.component";
 
 @NgModule({
   declarations: [
@@ -18,9 +18,9 @@ import { ProductsSidebarComponent } from "./products/sidebar/products-sidebar.co
     ProductComponent,
     ProductListComponent,
     TagFilterComponent,
-    ProductDetailsComponent,
     ProductsComponent,
-    ProductsSidebarComponent
+    ProductsSidebarComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

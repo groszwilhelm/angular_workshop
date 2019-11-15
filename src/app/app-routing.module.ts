@@ -11,18 +11,18 @@ const routes: Routes = [
     redirectTo: 'products',
     pathMatch: 'full'
   },
-  {
-    path: 'product-list',
-    component: ProductListComponent
-  },
+  // {
+  //   path: 'product-list',
+  //   component: ProductListComponent
+  // },
   {
     path: 'products',
     component: ProductsComponent
   },
-  {
-    path: 'product-list/:id',
-    component: ProductDetailsComponent
-  }
+  // {
+  //   path: 'product-list/:id',
+  //   component: ProductDetailsComponent
+  // }
 ];
 
 @NgModule({
