@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { ProductApiService } from '../core/services/product.service';
 import { Product } from '../product-list/product/product.model';
-import { SelectedProductService } from '../core/services/selected-product.service';
-import { Subject, Observable, merge } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { CategoriesService } from '../core/services/categories.service';
+import { combineLatest } from 'rxjs';
+import { tap, map } from 'rxjs/operators';
 
 @Component({
   selector: "wsh-products",
@@ -12,13 +12,12 @@ import { switchMap } from 'rxjs/operators';
 })
 export class ProductsComponent {
 
-  products: Product[] = [];
   selectedProduct: Product;
-  
+  productsNo: number;
+  products$ = this.productsService.productsWithCategories$;
 
-  constructor(private productsService: ProductApiService) {
-    this.productsService.getProducts()
-      .subscribe(data => this.products = data)
+  constructor(
+    private productsService: ProductApiService) {
   }
 
   changeSelectedProduct(p: Product) {

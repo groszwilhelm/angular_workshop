@@ -16,16 +16,5 @@ export class ProductDetailsComponent {
   public product = null;
 
   constructor(private route: ActivatedRoute, private productService: ProductApiService) {
-    this.productService.getProducts()
-      .pipe(
-        map(products => products
-          .find(product => product.id === this.route.snapshot.params.id)
-        )
-      )
-      .subscribe(product => this.setProduct(product));
-  }
-
-  private setProduct(product: Product) {
-    this.product = product;
   }
 }

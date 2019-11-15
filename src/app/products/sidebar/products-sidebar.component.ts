@@ -14,7 +14,7 @@ import { Product } from "./../../product-list/product/product.model";
           *ngFor="let p of products"
           class="list-group-item list-group-item-action"
         >
-          {{ p.title }}
+          {{ p.title }}( {{p.category}})
         </a>
       </div>
     </div>

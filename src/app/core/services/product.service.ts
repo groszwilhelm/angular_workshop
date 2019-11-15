@@ -2,36 +2,28 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Product } from '../../product-list/product/product.model';
-import { Observable } from 'rxjs';
-import { shareReplay } from 'rxjs/operators';
+import { Observable, combineLatest } from 'rxjs';
+import { shareReplay, map } from 'rxjs/operators';
+import { CategoriesService } from './categories.service';
 
 @Injectable()
 export class ProductApiService {
   readonly api = '/api/products';
 
-  constructor(private http: HttpClient) {}
+  products$: Observable<Product[]> = this.http.get<Product[]>(this.api);
 
-  getProducts(): Observable<Array<Product>> {
-    return this.http.get<Array<Product>>(this.api);
-  }
+  productsWithCategories$ = combineLatest(this.products$, this.categoriesService.categories$)
+  .pipe(
+    map(([products, categories]: [Product[], any]) => {
+      return products.map(product => ({
+        ...product,
+        category: categories.find(cat => cat.id === product.category).title
+      }))
+    }),
+  );
 
-  get404Products(): Observable<any> {
-    return this.http.get<Array<Product>>('/api/unexisting');
-  }
+  constructor(
+    private http: HttpClient,
+    private categoriesService: CategoriesService) {}
 
-  private products$: Observable<Product[]>
-
-  get products() {
-    if(!this.products$) {
-      this.products$ = this.getProducts().pipe(
-        shareReplay(1)
-      )
-    }
-
-    return this.products$;
-  }
-
-  reload() {
-    this.products$ = null;
-  }
 }

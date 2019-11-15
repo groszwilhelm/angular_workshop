@@ -6,8 +6,6 @@ import { Observable } from 'rxjs';
 export class CategoriesService {
     constructor(private httpClient: HttpClient) { }
 
-    getCategories(): Observable<any> {
-        return this.httpClient.get(`/api/categories`);
-    }
+    categories$ = this.httpClient.get(`/api/categories`);
     
 }

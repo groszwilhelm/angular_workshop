@@ -13,12 +13,6 @@ export class ProductListComponent {
   public selectedTag = '';
 
   constructor(private productService: ProductApiService, private router: Router) {
-    this.productService.getProducts()
-      .subscribe(products => this.setProducts(products));
-  }
-
-  private setProducts(products: Array<Product>) {
-    this.products = products;
   }
 
   public filterTagChangedHandler(tag) {

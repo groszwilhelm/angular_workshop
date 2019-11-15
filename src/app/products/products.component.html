@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-4">
     <div class="card">
-      <div class="card-header">Products</div>
+      <div class="card-header">Products - {{productsNo}}</div>
       <div>
-          <wsh-products-sidebar (productSelected)="changeSelectedProduct($event)" [products]="products"></wsh-products-sidebar>
+          <wsh-products-sidebar (productSelected)="changeSelectedProduct($event)" [products]="products$ | async"></wsh-products-sidebar>
       </div>
     </div>
   </div>
