@@ -11,53 +11,23 @@ import { products } from "src/app/product-list";
 export class ProductApiService {
   readonly api = "/api/products";
 
-  products$: Observable<Product[]> = this.http.get<Product[]>(this.api);
-  selectedProductId$: Subject<number> = new Subject();
+  private products$: Observable<Product[]>;
 
-  productsWithCategories$ = combineLatest(
-    this.products$,
-    this.categoriesService.categories$
-  ).pipe(
-    map(([products, categories]: [Product[], any]) => {
-      return products.map(product => ({
-        ...product,
-        category: categories.find(cat => cat.id === product.category).title
-      }));
-    })
-  );
+  get products() {
+    if(!this.products$) {
+      this.products$ = this.http.get<Product[]>(this.api).pipe(
+        shareReplay()
+      );
+    }
 
-  selectedProduct$: Observable<Product> = combineLatest(
-    this.productsWithCategories$,
-    this.selectedProductId$
-  ).pipe(
-    tap(data => console.log(data)),
-    map(([products, selectedProductId]: [Product[], number]) =>
-      products.find(prod => prod.id === selectedProductId)
-    )
-  );
+    return this.products$;
+  }
 
-  productsWithSuppliers$ = this.productsWithCategories$
-    .pipe(
-      mergeMap(products => products.map(product => product)),
-      tap(payload => console.log(payload)),
-      mergeMap(product => 
-        this.http.get(`/api/suppliers/${product.supplierId}`)
-        .pipe(
-          map(supplier => ({
-            ...product,
-            supplier: supplier.title
-          }))
-        )
-      )
-    )
-      .subscribe(console.log);
+  forceReload() {
+    this.products$ = null;
+  }
 
   constructor(
-    private http: HttpClient,
-    private categoriesService: CategoriesService
+    private http: HttpClient
   ) {}
-
-  changeProduct(productId: number) {
-    this.selectedProductId$.next(productId);
-  }
 }
