@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Product } from './../../product-list/product/product.model';
+import { ProductApiService } from './../../core/services/product.service';
 
 @Component({
     selector: 'wsh-product-details',
@@ -7,6 +7,6 @@ import { Product } from './../../product-list/product/product.model';
 })
 
 export class ProductDetailsComponent{
-    @Input()
-    product: Product
+
+    constructor(public productsService: ProductApiService) {}
 }

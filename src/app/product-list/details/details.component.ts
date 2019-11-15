@@ -15,6 +15,6 @@ import { map } from 'rxjs/operators';
 export class ProductDetailsComponent {
   public product = null;
 
-  constructor(private route: ActivatedRoute, private productService: ProductApiService) {
+  constructor(private productService: ProductApiService) {
   }
 }

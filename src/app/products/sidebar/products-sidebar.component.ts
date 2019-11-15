@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Product } from "./../../product-list/product/product.model";
+import { ProductApiService } from './../../core/services/product.service';
 
 @Component({
   selector: "wsh-products-sidebar",
@@ -10,8 +11,8 @@ import { Product } from "./../../product-list/product/product.model";
       </div>
       <div class="list-group">
         <a
+          *ngFor="let p of products$ | async"
           (click)="changeSelectedProduct(p)"
-          *ngFor="let p of products"
           class="list-group-item list-group-item-action"
         >
           {{ p.title }}( {{p.category}})
@@ -22,13 +23,13 @@ import { Product } from "./../../product-list/product/product.model";
 })
 export class ProductsSidebarComponent {
 
-  @Input()
-  products: Product[];
+  products$ = this.productsService.productsWithCategories$;
 
-  @Output()
-  productSelected: EventEmitter<Product> = new EventEmitter();
+  constructor(
+    private productsService: ProductApiService) {
+  }
 
   changeSelectedProduct(p: Product) {
-    this.productSelected.emit(p);
+    this.productsService.changeProduct(p.id);
   }
 }

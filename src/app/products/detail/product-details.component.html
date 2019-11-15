@@ -1,5 +1,4 @@
-    <div class="col-12">
-
+    <div class="col-12" *ngIf="productsService.selectedProduct$ | async as product">
         <h3>{{product?.title}}</h3>
         <div>{{product?.description}}</div>
         <img [attr.src]="product?.imageSrc" class="img-fluid">

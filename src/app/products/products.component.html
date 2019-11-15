@@ -3,12 +3,12 @@
     <div class="card">
       <div class="card-header">Products - {{productsNo}}</div>
       <div>
-          <wsh-products-sidebar (productSelected)="changeSelectedProduct($event)" [products]="products$ | async"></wsh-products-sidebar>
+          <wsh-products-sidebar></wsh-products-sidebar>
       </div>
     </div>
   </div>
   <div class="col-8 details p-4">
-    <wsh-product-details [product]="selectedProduct"></wsh-product-details>
+    <wsh-product-details></wsh-product-details>
   </div>
 </div>
 
