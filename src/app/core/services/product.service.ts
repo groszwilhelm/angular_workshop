@@ -2,10 +2,8 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
 import { Product } from "../../product-list/product/product.model";
-import { Observable, combineLatest, Subject } from "rxjs";
-import { shareReplay, map, tap, mergeMap } from "rxjs/operators";
-import { CategoriesService } from "./categories.service";
-import { products } from "src/app/product-list";
+import { Observable } from "rxjs";
+import { shareReplay } from "rxjs/operators";
 
 @Injectable()
 export class ProductApiService {
